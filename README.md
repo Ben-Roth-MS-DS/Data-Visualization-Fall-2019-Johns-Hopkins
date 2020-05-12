@@ -13,7 +13,7 @@ This repository contains my final portfolio and work for Data Visualization. The
 
 The visualizations were initially created in R in the file: Data-Viz-Complete-Graph-Creation.Rmd. Next, the graphs were editted using Adobe Illustrator to add additional information to and touch up the graphs. The final graphs with accompanying insights can be found in the file: Data-Viz-Complete-Graph-Creation.Rmd.
 
-The final portfolio can be found [here](https://htmlpreview.github.io/?https://github.com/Ben-Roth-MS-Data-Science/Data-Visualization-Fall-2019-Johns-Hopkins/Project/Data-Viz-Final-Presenation-Ben-Roth.html).
+The final portfolio can be found [here](https://htmlpreview.github.io/?https://github.com/Ben-Roth-MS-Data-Science/Data-Visualization-Fall-2019-Johns-Hopkins/blob/master/Data-Viz-Final-Presentation-Ben-Roth.html).
 
 Data sources for the project can be found in the following locations:
 1. FEC Contributions
