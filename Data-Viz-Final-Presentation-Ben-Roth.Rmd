@@ -1,0 +1,227 @@
+---
+title: "Data Viz Final Portfolio"
+author: "Bejamin Roth"
+date: "12/15/2019"
+output: html_document
+---
+
+```{r setupfig.align='center', include=FALSE}
+knitr::opts_chunk$set(echo = F)
+knitr::opts_chunk$set(include = T)
+knitr::opts_chunk$set(out.width="650px", dpi=120)
+```
+
+## Introduction
+
+\n
+
+For my data visualization, I focus on campaign data from the 2020 Democratic Presidential Primary. Most of the data I use is from the Federal Elections Commission (FEC), and consists of campaign contributions and campaign spending. I also used polling data aggregated by 538. Initially, I had included data ranging from January 1, 2017 to September 20, 2019 (the day before I downloaded the data). After looking at the data, however, I decided to change the date range to January 1, 2019 through June 30, 2019. Not many observations occurred before 2019, and the data appeared incomplete past June. I break up my 11 graphs into 4 sections:
+
+\n
+1. Disbursements
+\n
+2. Contributions
+\n
+3. Disbursement and Contribution Comparison
+\n
+4. Polling
+\n
+
+As I believe will be highlighted in the first section, the disbursement data from the FEC seemed of low quality. The disbursement data broke each observation into one of two factor levels: broader disbursement categories, and more granular disbursement descriptions. It seemed that there was an issue matching categories to descriptions, as ~90% of the data appeared to be labeled as 'Other'. While I had tried resorting the descriptions into broader categories, I had difficulty matching the roughly 1,800 disbursement types into categories in a way that made sense.
+
+\n
+
+Overall, I enjoyed the opportunity to expand my visualization abilities and explore campaign data. I also found that manipulating the data into the proper format to graph was challenging at times. The aspect of the project that I struggled with most was choosing colors of certain graphs. With two graphs that had 10+ candidates, it took some time to find the right combination of colors so that each candidate was discernable enough from all of the others. I used ggplot2 to make initial versions of the graphs, and then Adobe Illustrator to add finer details. There were a few issues with some of the graphs when exporting them from Illustrator; I could not fix  certain distorted text boxes.
+
+
+\n
+
+## Disbursements
+
+\n
+
+### Graph 1
+
+\n
+
+The first graph is a waffle graph that compares how often candidates spend money on a certain disbursement category. Initially, I was surpised to see administrative expenses account for so many spending items. However, after thinking about how much campaigns spend on salaries, supplies, rent, etc., I was able to accept that result a little more. Additionally, I was surprised to see how little campaigns spent on events and advertising, though I believe that may have been more of a data quality issue 
+
+\n
+
+```{r fig.align='center'}
+knitr::include_graphics("./Project/Illustrator PNGs/Disbursement Waffle - Illustrator.png")
+```
+
+\n
+
+### Graph 2
+ 
+\n
+
+The second disbursement graph seeks to understand correlations between disbursement categories. I would have expected more correlation between categories, as no correlation is stronger than 0.5; for example, I would expect something like a negative correlation between events and advetising.
+
+\n
+
+```{r fig.align='center'}
+knitr::include_graphics("./Project/Illustrator PNGs/Disbursement Correlation - Illustrator.png")
+```
+
+\n
+
+### Graph 3
+
+\n
+
+Next, I created a heatmap to compare what disbursement categories campaigns spend their money on. Although it's similar to the waffle map in that campaigns spend the largest portion of their total budge on administrative related expenses, it differs in that campaigns appear to spend more on advertising than the waffle map would suggest. I think that this visualization is necessary and different from the waffle chart, as costs of disbursements could reasonably differ from the number of times that an item is purchased.
+
+\n
+
+```{r fig.align='center'}
+knitr::include_graphics("./Project/Illustrator PNGs/Disbursement Heatmap - Illustrator.png")
+```
+
+
+\n
+
+### Graph 4
+
+\n
+
+The final disbursement graph seeks to understand how much money campaigns are spending in ~20 of the first primary states. The total amount of spending in each state was normalized, so that state spending amounts could be compared relative to the average amount that candidates are spending in each state. I would have expected campaigns to spend the most in the first four primary states, but as the graph shows, that is not the case. Texas and California were removed from the data because they were outliers that skewed the normalized results.
+
+\n
+
+```{r fig.align='center'}
+knitr::include_graphics("./Project/Illustrator PNGs/Bar Graph Positive Negative - Illustrator.png")
+```
+
+\n
+
+## Contributions
+
+\n
+
+### Graph 5
+
+\n
+
+The first contribution graph seeks to visualize which candidates are raising the most money in each state. There are quite a few candidates that have leads in different states. Although the graph itself offers more analysis, I would like to point out how inexplicable it is for Hickenlooper to have the lead in Arkansas, given his lack of polling popularity.
+
+\n
+
+
+```{r fig.align='center'}
+knitr::include_graphics("./Project/Illustrator PNGs/Top Campaign Contribution Amounts by State - Illustrator.png")
+```
+
+### Graph 6
+
+\n
+
+This next map highlights the difference in which candidates are receiving the most money in each state, and which candidates are receiving the most contributions in each state. There is an incredibly stark difference between how many candidates appear in this graph and the previous graph. The popularity of Sanders is truly striking.
+
+\n
+
+```{r fig.align='center'}
+knitr::include_graphics("./Project/Illustrator PNGs/Top Campaign Contributions by State - Illustrator.png")
+```
+
+\n
+
+### Graph 7
+
+\n
+
+In addition to viewing how contributions vary by state, I was also curious to see how contributions have changed over time. This calendar heatmap shows general contribution trends over the first six months of 2019, as well as notable contribution days.
+
+\n
+
+```{r fig.align='center'}
+knitr::include_graphics("./Project/Illustrator PNGs/Daily Contribution Amount Heatmap - Illustrator.png")
+```
+
+\n
+
+### Graph 8 
+
+\n
+
+The second calendar visualization examines which candidates received the most money each day for the first six months of 2019. I think that it does a good job of telling the story about which candidates were relevant during what time periods of the campaign 
+
+\n
+
+```{r fig.align='center'}
+knitr::include_graphics("./Project/Illustrator PNGs/Top Daily Campaign Timeline - Illustrator.png")
+```
+
+\n
+
+## Disbursement and Contribution Comparison
+
+\n
+
+### Graph 9
+
+\n
+
+The first comparison between contributions and disbursements focuses on how many money campaigns are spending compared to how much they are receiving. I found it interesting that the two candidates whose messaging most highlights grassroots donations, Warren and Sanders, are also the candidates with the highest rations of dollars spent to dollars received.
+
+\n
+
+```{r fig.align='center'}
+knitr::include_graphics("./Project/Illustrator PNGs/Dollars Spent Per Dollars Received - Illustrator.png")
+```
+
+\n
+
+### Graph 10
+
+\n
+
+Next, I wanted to both determine if their was a relationship between spending and receiving and see how two of the top candidates compared in terms of their spending and contributions trends over time. My hypothesis would be that candidates who spend more money on staff, events, advertising, etc. would see an increase in contributions. Additionally, I would have guessed that top candidates would display similar contribution and disbursement trends over time. As the graph suggests, neither of those hypotheses were correct.
+
+\n
+
+```{r fig.align='center'}
+knitr::include_graphics("./Project/Illustrator PNGs/Line Graph Dollars Spent per Dollars Received - Illustrator.png")
+```
+
+\n
+
+## Polling
+
+\n
+
+### Graph 11
+
+\n
+
+For my final graph, I wanted to see how national polling has changed over time for each of the top candidates.
+
+\n
+
+```{r fig.align='center'}
+knitr::include_graphics("./Project/Illustrator PNGs/Area Map Campaign Polling - Illustrator.png")
+```
+
+\n
+
+## Data Sources
+ 
+ \n
+
+* FEC Contributions
+  + [https://www.fec.gov/data/receipts/individual-contributions/](https://www.fec.gov/data/receipts/individual-contributions/)
+  
+\n
+
+* FEC Disbursements
+  + [https://www.fec.gov/data/disbursements/?data_type=processed
+](https://www.fec.gov/data/disbursements/?data_type=processed)
+
+\n
+
+* 538 Polling Data
+  + [https://projects.fivethirtyeight.com/polls-page/president_primary_polls.csv](https://projects.fivethirtyeight.com/polls-page/president_primary_polls.csv)
+
+

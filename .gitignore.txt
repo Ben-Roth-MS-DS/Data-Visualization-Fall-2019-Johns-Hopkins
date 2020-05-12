@@ -1,0 +1,9 @@
+## Don't track the contents of these folders
+./Ignore/
+./Data/
+
+## Don't add these files either
+.DS_Store
+.Rhistory
+scrapedpage.html
+*.DS_Store
